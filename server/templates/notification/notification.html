@@ -1,0 +1,41 @@
+{% include "common/base.html" %}
+{% block contant %}
+<div class="card">
+<div class="card-header">
+Notification
+</div>
+<div class="card-body">
+<form action="" method="post" class="form">
+    {% csrf_token %}
+    {{form.as_p}}
+      <button type="submit" class="btn btn-primary">
+        Submit
+      </button>
+  </form>
+  </div>
+  </div>
+  <div class="card">
+<div class="card-header">
+Notification
+</div>
+<div class="card-body">
+<table class="table">
+<thead>
+<th>Name</th>
+<th>Title</th>
+<th>Date Added</th>
+<th>Status</th>
+</thead>
+<tbody>
+{% for notification in notification_not_list %}
+<tr>
+    <td>{{notification.name}}</td>
+    <td>{{notification.title}}</td>
+    <td>{{notification.date_added}}</td>
+    <td>{{notification.status}}</td>
+</tr>
+{% endfor %}
+</tbody>
+  </div>
+  </div>
+{% endblock %}
